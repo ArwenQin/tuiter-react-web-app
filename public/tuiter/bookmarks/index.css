@@ -1,0 +1,102 @@
+.wd-container{
+  border: thin solid lightgray;
+  background-color: white;
+  width:118%;
+  overflow: hidden;
+
+}
+.wd-array-style{
+  padding-left: 12px;
+  padding-top: 12px;
+}
+.wd-bookmark-style{
+  font:28px arial;
+  padding-left: 45px;
+}
+.wd-bookmark-dots{
+  color:black;
+  font:18px arial;
+  position: relative;
+  left:435px;
+  bottom: 3px;
+}
+
+.wd-padding-left-20{
+  padding-left: 20px;
+}
+.wd-user-image{
+  width:48px;
+  height:48px;
+  border-radius: 50%;
+}
+
+.wd-user-name-bar{
+  position: relative;
+  font: 16px arial;
+  bottom: 37px;
+  left:18px;
+}
+
+.wd-user-color-gray{
+  color: dimgray;
+}
+
+.wd-bookmark-sencond-dots{
+  color:dimgray;
+  font:14px arial;
+  position: relative;
+  left:342px;
+  bottom: 4px;
+}
+
+.wd-signature-style{
+  font:16px arial;
+  position: relative;
+  left:88px;
+  bottom:32px;
+}
+
+.wd-image-style{
+  position: relative;
+  left: 88px;
+  bottom: 12px;
+  right:12px;
+  border: thin solid lightgray;
+  border-radius: 15px;
+  width: 640px;
+  height: 450px;
+
+}
+.wd-image-radius {
+  width: 640px;
+  height: 350px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding-bottom: 5px;
+}
+
+.wd-text-twit-style{
+  font: 16px arial;
+  padding-left: 8px;
+  display: inline-block;
+}
+.wd-icon-style {
+  display:inline;
+  color:dimgray;
+  padding-left: 50px;
+}
+.wd-bookmark-sencond-dots2{
+  color:dimgray;
+  font:14px arial;
+  position: relative;
+  left:394px;
+  bottom: 4px;
+}
+
+.wd-color-blue{
+  color:lightskyblue;
+}
+.wd-link-style{
+  text-decoration:none;
+  color:inherit;
+}
