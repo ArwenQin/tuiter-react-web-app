@@ -1,0 +1,15 @@
+.wd-image {
+  position: relative;
+  left:15%;
+
+}
+
+.wd-margin-right{
+margin-right: 8%;
+}
+
+.wd-delete-icon{
+  position: absolute;
+  left:96%;
+
+}
