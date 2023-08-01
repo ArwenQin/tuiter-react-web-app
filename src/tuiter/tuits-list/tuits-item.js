@@ -35,7 +35,7 @@ const TuitsItem = (
             <img height={70} className="rounded-circle wd-image" src={`${tuit.image}`}/>
           </div>
 
-          <div className="col-10">
+          <div className="col-xxl-10 col-xl-10 col-lg-12 ">
             <div><b>{tuit.userName}</b>  <BsFillPatchCheckFill size={16} color="blue" />  {tuit.handle}<BsDot size={12}/>{tuit.time}
               <span className="wd-delete-icon"><RxCross1  size={14}
                  onClick={() => deleteTuitHandler(tuit._id)}/></span></div>
