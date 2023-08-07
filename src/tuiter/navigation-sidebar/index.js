@@ -1,10 +1,15 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import {AiFillHome,AiOutlineBell} from "react-icons/ai";
 import {BsHash,BsEnvelope,BsBookmark,BsPerson} from "react-icons/bs";
 import {LiaListSolid} from "react-icons/lia";
-import {CiCircleMore} from "react-icons/ci";
+import {CiCircleMore, CiLogin} from "react-icons/ci";
+import {MdAppRegistration} from "react-icons/md";
 const NavigationSidebar = () => {
+  const { currentUser } = useSelector((state) => state.user);
+
   const { pathname } = useLocation();
   const [ignore, tuiter, active] = pathname.split("/");
   const links = [{ icon: <AiFillHome />, text: "home" },
@@ -13,15 +18,20 @@ const NavigationSidebar = () => {
     { icon: <BsEnvelope/>, text: "messages" },
     { icon: <BsBookmark/>, text: "bookmarks" },
     { icon: <LiaListSolid/>, text: "lists" },
-    { icon: <BsPerson/>, text: "profile" },
-    { icon: <CiCircleMore/>, text: "more" } ];
+    { icon: <CiCircleMore/>, text: "more" }
+  ]
   return (
       <div className="list-group">
         {links.map((link) =>
             <Link to={`/tuiter/${link.text}`} className={`list-group-item text-capitalize ${active === link.text ? "active" : ""}`}>
               {link.icon} &nbsp;<span className="d-none d-xl-inline">{link.text}</span>
             </Link>
+
         )}
+        {!currentUser && <Link className="list-group-item text-capitalize" to="/tuiter/login">  <CiLogin/> &nbsp;<span className="d-none d-xl-inline">Login </span>  </Link>}
+        {!currentUser && <Link className="list-group-item text-capitalize" to="/tuiter/register"><MdAppRegistration/>&nbsp;<span className="d-none d-xl-inline">Register</span></Link>}
+        { currentUser && <Link className="list-group-item text-capitalize" to="/tuiter/profile"><BsPerson/> &nbsp;<span className="d-none d-xl-inline">Profile</span> </Link>}
+
       </div>
   );
 };

@@ -3,14 +3,15 @@ import TuitStats from "./tuit-stats";
 import {useDispatch} from "react-redux";
 import "./index.css";
 import { BsFillPatchCheckFill,BsDot } from 'react-icons/bs';
-import {deleteTuit} from "../reducers/tuits-reducer";
+import {deleteTuitThunk} from "../services/tuits-thunks";
+
 import {RxCross1} from "react-icons/rx";
 
 
 const TuitsItem = (
 
     {tuit = {
-      "_id": 123, "topic": "Space", "userName": "SpaceX",
+      "_id": 123, "topic": "Space", "username": "SpaceX",
       "title": "Tesla CyberTruck lands on Mars and picks up the Curiosity rover on its 6' bed",
       "time": "2h",   "image": "https://oceansquare.com/wp-content/uploads/2018/04/tesla-logo-500.jpg",
 
@@ -25,7 +26,8 @@ const TuitsItem = (
 ) => {
   const dispatch = useDispatch();
   const deleteTuitHandler = (id) => {
-    dispatch(deleteTuit(id));
+    dispatch(deleteTuitThunk(id));
+
   }
 
   return(
@@ -36,7 +38,7 @@ const TuitsItem = (
           </div>
 
           <div className="col-xxl-10 col-xl-10 col-lg-12 ">
-            <div><b>{tuit.userName}</b>  <BsFillPatchCheckFill size={16} color="blue" />  {tuit.handle}<BsDot size={12}/>{tuit.time}
+            <div><b>{tuit.username}</b>  <BsFillPatchCheckFill size={16} color="blue" />  {tuit.handle}<BsDot size={12}/>{tuit.time}
               <span className="wd-delete-icon"><RxCross1  size={14}
                  onClick={() => deleteTuitHandler(tuit._id)}/></span></div>
 
