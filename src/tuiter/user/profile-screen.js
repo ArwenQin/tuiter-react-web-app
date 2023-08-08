@@ -5,11 +5,14 @@ import { profileThunk, logoutThunk, updateUserThunk }
   from "../services/auth-thunks";
 function ProfileScreen() {
  const { currentUser } = useSelector((state) => state.user);
+
   const [ profile, setProfile ] = useState(currentUser);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const save = async () => { try {
     await dispatch(updateUserThunk(profile));
+
   } catch (e) {
     alert(e);
   }
@@ -58,7 +61,6 @@ function ProfileScreen() {
             navigate("../login");
           }}>                   Logout</button>
       <button onClick={save}>Save  </button>
-
 
     </div>)
 }

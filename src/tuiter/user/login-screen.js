@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { loginThunk } from "../services/auth-thunks";
 function LoginScreen() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.user);
+
+
   const handleLogin = async () => {
     try {
       await dispatch(loginThunk({ username, password }));
-      navigate("/tuiter/profile");
-    } catch (e) {
+
+      navigate('/tuiter/profile');}
+
+      catch (e) {
       alert(e);
     }
   };
+
   return (
       <div>
         <h1>Login Screen</h1>

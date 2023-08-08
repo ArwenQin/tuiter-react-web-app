@@ -8,7 +8,8 @@ const api = axios.create({ withCredentials: true });
 
 export const login = async ({ username, password }) => {
   const response = await api.post(`${USERS_URL}/login`, { username, password });
-  return response.data;
+  const user = response.data;
+  return user;
 
 };
 export const logout = async () => {

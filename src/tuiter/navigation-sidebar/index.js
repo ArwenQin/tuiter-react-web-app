@@ -28,9 +28,9 @@ const NavigationSidebar = () => {
             </Link>
 
         )}
-        {!currentUser && <Link className="list-group-item text-capitalize" to="/tuiter/login">  <CiLogin/> &nbsp;<span className="d-none d-xl-inline">Login </span>  </Link>}
-        {!currentUser && <Link className="list-group-item text-capitalize" to="/tuiter/register"><MdAppRegistration/>&nbsp;<span className="d-none d-xl-inline">Register</span></Link>}
-        { currentUser && <Link className="list-group-item text-capitalize" to="/tuiter/profile"><BsPerson/> &nbsp;<span className="d-none d-xl-inline">Profile</span> </Link>}
+        {!currentUser && <Link className={`list-group-item text-capitalize ${active === 'login' ? 'active' : ''}`} to="/tuiter/login">  <CiLogin/> &nbsp;<span className="d-none d-xl-inline">Login </span>  </Link>}
+        {!currentUser && <Link className={`list-group-item text-capitalize ${active === 'register' ? 'active' : ''}`} to="/tuiter/register"><MdAppRegistration/>&nbsp;<span className="d-none d-xl-inline">Register</span></Link>}
+        { currentUser && <Link className={`list-group-item text-capitalize ${active === 'profile' ? 'active' : ''}`} to="/tuiter/profile"><BsPerson/> &nbsp;<span className="d-none d-xl-inline">Profile</span> </Link>}
 
       </div>
   );
