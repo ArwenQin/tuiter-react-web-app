@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const TUITS_API = 'https://https://tuiter-node-server-app-694q.onrender.com/api/tuits';
+const TUITS_API = 'https://tuiter-node-server-app-694q.onrender.com/api/tuits';
 
 export const createTuit = async (tuit) => { const response = await axios.post(TUITS_API, tuit)
   return response.data;
